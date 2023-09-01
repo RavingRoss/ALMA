@@ -1,10 +1,13 @@
 #include <Servo.h>
-
+#define LED_PIN 8
 byte servoPin = 9; // signal pin for the ESC.
 byte potentiometerPin = A0; // analog input pin for the potentiometer.
 Servo servo;
 
 void setup() {
+
+pinMode(LED_PIN, OUTPUT);
+
 servo.attach(servoPin);
 servo.writeMicroseconds(1500); // send "stop" signal to ESC. Also necessary to arm the ESC.
 
@@ -12,6 +15,10 @@ delay(7000); // delay to allow the ESC to recognize the stopped signal.
 }
 
 void loop() {
+
+int potentiometerValue = analogRead(potentiometerPin);
+int brightness = potentiometerValue / 4;
+analogWrite(LED_PIN, brightness);
 
 int potVal = analogRead(potentiometerPin); // read input from potentiometer.
 
