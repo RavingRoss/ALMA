@@ -1,0 +1,211 @@
+! Sample coating.dat file supplied with ZEMAX
+! See ZEMAX manual for complete syntax documentation
+
+! Sample material definitions
+
+MATE AIR
+0.55 1.0 0
+
+MATE N15
+0.55 1.5 0
+
+MATE AL2O3
+.600 1.59 0
+1.60 1.56 0
+
+MATE ALUM
+.550 0.7 -7.0
+
+MATE ALUM2
+.546 0.82 -5.99
+
+MATE BK7
+0.4  1.5308485 0
+0.46 1.5244335 0
+0.5  1.5414145 0
+0.7  1.5130640 0
+0.8  1.5107762 0
+1.0  1.5075022 0
+2.0  1.4945016 0
+
+MATE CEF3
+.550 1.63 0
+2.00 1.59 0
+
+MATE LA2O3
+.550 1.95 0
+2.00 1.86 0
+
+MATE MGF2
+0.4  1.38387 0
+0.46 1.38110 0
+0.5  1.37978 0
+0.7  1.37608 0
+0.8  1.37506 0
+1.0  1.37358 0
+2.0  1.36784 0
+2.5  1.36426 0
+
+MATE THF4
+.400 1.52 0
+.750 1.51 0
+
+MATE ZNS
+0.4  2.5571707 0
+0.46 2.4579060 0
+0.5  2.4190751 0
+0.7  2.3317272 0
+0.8  2.3131206 0
+1.0  2.2922206 0
+2.0  2.2859449 0
+
+MATE ZRO2
+.550 2.10 0
+2.00 2.00 0
+
+! Sample coating definitions
+
+COAT NULL
+MGF2 0.0
+
+COAT AR
+MGF2 .25
+
+COAT WAR
+MGF2 .25
+LA2O3 .50
+
+COAT HEAR1
+MGF2 .25
+ZRO2 .50
+CEF3 .25
+
+COAT HEAR2
+MGF2  .25
+ZNS   .50
+AL2O3 .75
+
+COAT GAP
+AIR .1
+
+COAT METAL
+ALUM2 0.0075092
+
+COAT METAL2
+ALUM2 0.04
+
+COAT AIR0010
+AIR .01
+
+COAT ETALON
+ZNS  .25 0 4
+MGF2 .25 0 4
+BK7  5000 1 0
+MGF2 .25 0 4
+ZNS  .25 0 4
+
+COAT FP
+ALUM 0.004
+AIR 150
+ALUM 0.004
+
+! Samples of defining simple ideal coatings using I. format; defines transmitted intensity, rest is assumed to be reflected
+! Format: I.transmission
+
+COAT I.05
+COAT I.50
+COAT I.95
+COAT I.98
+COAT I.99
+COAT I.995
+COAT I.99999999
+
+! Samples of defining ideal coatings using IDEAL. Defines transmitted and reflected intensity, rest is assumed to be absorbed
+! Format: IDEAL <name> <Transmitted intensity> <Reflected intensity>
+
+IDEAL SPLIT 0.50 0.50
+
+IDEAL ABSORB 0 0
+
+! Sample of defining ideal coatings using IDEAL2. Defines reflected and transmitted complex amplitude for S and P, rest is assumed to be absorbed
+! Format: IDEAL2 <name> s_rr s_ri s_tr s_ti p_rr p_ri p_tr p_ti no_pi_flag
+
+IDEAL2 PASS_P 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0 
+
+! Sample table coating
+! See program manual for complete syntax and important comments
+
+TABLE PASS45
+ANGL 0.0
+WAVE 0.55 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+ANGL 45.0
+WAVE 0.55 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+ANGL 90.0
+WAVE 0.55 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+
+TABLE BEAMSPLIT
+ANGL 0.0
+WAVE 0.45 1.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0
+WAVE 0.65 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+
+TABLE RGPASS
+ANGL 0.0
+WAVE 0.360 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.380 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.400 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.420 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.440 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.460 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.465 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.470 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.475 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.480 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+WAVE 0.486 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+WAVE 0.490 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+WAVE 0.495 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.500 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.520 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.540 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.560 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.587 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.600 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.620 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.640 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.656 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.680 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+WAVE 0.700 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0
+
+! Sample taper function
+TAPR QUAD
+RT 2 -.1
+
+! Sample coating using a defined taper
+COAT AR_TAPR
+MGF2 .25 0 0 QUAD
+
+! Encrypted coatings used by the Edmund Optics lens catalog files:
+ENCRYPTED ZEC_MF550
+ENCRYPTED ZEC_HEA717
+ENCRYPTED ZEC_NIRI517
+ENCRYPTED ZEC_TELECOMNIR517
+ENCRYPTED ZEC_UVAR
+ENCRYPTED NIRII
+ENCRYPTED ZEC_HEA460
+ENCRYPTED ZEC_HEA517
+ENCRYPTED ZEC_HEA673
+ENCRYPTED VISNIR
+ENCRYPTED ZEC_UVVIS
+ENCRYPTED ZEC_HEA613
+
+! Encrypted coatings used by the Thorlabs lens catalog files:
+ENCRYPTED THORA.ZEC
+ENCRYPTED THORASLAH64.ZEC
+ENCRYPTED THORB.ZEC
+ENCRYPTED THORBSLAH64.ZEC
+ENCRYPTED THORC.ZEC
+ENCRYPTED THORCSLAH64.ZEC
+ENCRYPTED THOREBAF2.ZEC
+ENCRYPTED THORESI.ZEC
+ENCRYPTED THORFGE.ZEC
+ENCRYPTED THORFZNSE.ZEC
+ENCRYPTED THORUV.ZEC

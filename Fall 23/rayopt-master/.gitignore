@@ -1,0 +1,7 @@
+/*.egg-info
+/dist
+/build
+/rayopt/*.so
+/rayopt/simplex_accel.c
+/.coverage.*
+/.coverage
